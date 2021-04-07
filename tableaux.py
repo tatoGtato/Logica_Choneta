@@ -128,6 +128,8 @@ def es_literal(f):
 	# Output: True/False
 	if f.label in conectivos:
 		return False
+	if f.label == "-":
+		return es_literal(f.right) and es_literal(f.left)
 	else:
 		 return True
 
